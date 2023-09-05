@@ -42,7 +42,13 @@ date_default_timezone_set("America/Santiago");
 
       <div class="row">
         <div class="col-sm-2">
-          <a href="views/grafico.php" class="btn btn-primary" role="button" target="_blank">Estado del Servicio</a>
+          <a href="views/grafico.php" class="btn btn-primary" role="button" target="_blank">Estado del Servicio
+            General</a>
+        </div>
+
+        <div class="col-sm-2">
+          <a href="views/grafico_cam.php" class="btn btn-primary" role="button" target="_blank">Estado del Servicio
+            Detallado</a>
         </div>
 
       </div>
@@ -540,10 +546,10 @@ date_default_timezone_set("America/Santiago");
   $conn->close();
   ?>
   <script type="text/javascript">
-    function actualizarPagina() {
-      location.reload();
-    }
-    setInterval(actualizarPagina, 300000);
+  function actualizarPagina() {
+    location.reload();
+  }
+  setInterval(actualizarPagina, 300000);
   </script>
   <script src="js/fontawesome.js?v=1"></script>
   <script src="js/bootstrap_531.js?v=1">

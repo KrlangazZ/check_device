@@ -28,9 +28,15 @@ if ($result) {
 } else {
   echo "Error en la consulta: " . mysqli_error($conn);
 }
-$estado_serv = $activaciones + $inactivaciones;
-$online = ($activaciones / $estado_serv) * 100;
-$offline = ($inactivaciones / $estado_serv) * 100;
+$estado_serv = round($activaciones, 1) + round($inactivaciones, 1);
+$online = round(($activaciones / $estado_serv) * 100, 1);
+$offline = round(($inactivaciones / $estado_serv) * 100, 1);
+
+echo ($estado_serv) . " - ";
+echo ($activaciones) . " - ";
+echo ($inactivaciones) . " - ";
+echo ($online) . " - ";
+echo ($offline);
 
 mysqli_close($conn);
 
@@ -44,6 +50,8 @@ mysqli_close($conn);
   <link rel="icon" type="image/png" href=" ../img/favicon-32x32.png">
   <script>
     window.onload = function() {
+
+
 
       CanvasJS.addColorSet("grafico_servicio",
         [ //colorSet Array
